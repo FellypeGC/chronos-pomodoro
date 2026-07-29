@@ -9,13 +9,26 @@ function App() {
 
   return (
     <>
-      <Heading>
-        Olá, Mundo!
-        <button>
-          <TimerIcon />
-        </button>
-      </Heading>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi voluptatibus architecto recusandae quam commodi est dolorum quasi quos accusantium nesciunt? Corrupti possimus ea facilis modi corporis voluptatem eum eaque beatae?</p>
+      <div className="container">
+        <div className="content">
+          <section>LOGO</section>
+        </div>
+      </div>
+      <div className="container">
+        <div className="content">
+          <section>MENU</section>
+        </div>
+      </div>
+      <div className="container">
+        <div className="content">
+          <section>FORMULÁRIO</section>
+        </div>
+      </div>
+      <div className="container">
+        <div className="content">
+          <section>FOOTER</section>
+        </div>
+      </div>
     </>
   )
 }
