@@ -21,6 +21,28 @@ function App() {
       <Container>
         <CountDown />
       </Container>
+
+      <Container>
+        <form className="form" action="">
+          <div className="formRow">
+            <label htmlFor="meuInput">Task</label>
+            <input type="text" id="meuInput" />
+          </div>
+          
+          <div className="formRow">
+            <p>Task description</p>
+          </div>
+          
+          <div className="formRow">
+            <p>Cycles</p>
+            <p>0 0 0 0 0 0 0</p>
+          </div>
+          
+          <div className="formRow">
+            <button>Enviar</button>
+          </div>
+        </form>
+      </Container>
     </>
   )
 }
