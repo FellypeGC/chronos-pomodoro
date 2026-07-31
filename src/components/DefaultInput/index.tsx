@@ -1,12 +1,13 @@
 type DefaultInputProps = {
   id: string;
+  labelText: string;
 } & React.ComponentProps<"input">;
 
-const index = ({ id, type }: DefaultInputProps) => {
+const index = ({ id, labelText, type, ...rest }: DefaultInputProps) => {
   return (
     <>
-      <label htmlFor={id}>Task</label>
-      <input type={type} id={id} />
+      {labelText && <label htmlFor={id}>{labelText}</label>}
+      <input type={type} {...rest} id={id} />
     </>
   )
 }
