@@ -5,7 +5,7 @@ const Logo = () => {
   return (
     <div className={styles.logo}>
       <a className={styles.logoLink} href="#">
-        <TimerIcon size={64} />
+        <TimerIcon />
         <span>Chronos</span>
       </a>
     </div>

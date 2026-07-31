@@ -8,13 +8,12 @@
 }
 
 .logoLink {
-  background-color: red;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-weight: bold;
-  gap: 1rem;
+  gap: .4rem;
   font-size: 4.2rem;
   text-decoration: none;
   color: var(--primary);
@@ -22,7 +21,7 @@
 }
 
 .logoLink:hover {
-  filter: brightness(50%);
+  filter: brightness(80%);
 }
 
 .logoLink svg {
