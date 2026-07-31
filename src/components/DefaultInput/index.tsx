@@ -5,7 +5,7 @@ type DefaultInputProps = {
   labelText: string;
 } & React.ComponentProps<"input">;
 
-const index = ({ id, labelText, type, ...rest }: DefaultInputProps) => {
+const DefaultInput = ({ id, labelText, type, ...rest }: DefaultInputProps) => {
   return (
     <>
       {labelText && <label htmlFor={id}>{labelText}</label>}
@@ -14,4 +14,4 @@ const index = ({ id, labelText, type, ...rest }: DefaultInputProps) => {
   )
 }
 
-export default index
+export default DefaultInput
