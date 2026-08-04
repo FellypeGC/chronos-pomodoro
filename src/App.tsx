@@ -15,17 +15,9 @@ import "./styles/global.css"
 import { useState } from "react"
 
 function App() {
-  const [numero, setNumero] = useState(0);
-
-  function handleClick() {
-    setNumero((prevState) => prevState + 1);
-  }
-
+  
   return (
     <>
-      <Heading>numero: {numero}</Heading>
-      <button onClick={handleClick}>Aumenta</button>
-
       <Container>
         <Logo />
       </Container>
