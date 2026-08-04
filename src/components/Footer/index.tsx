@@ -1,7 +1,7 @@
 import styles from "./styles.module.css"
 
 
-const Heading = () => {
+const Footer = () => {
   return (
     <footer className={styles.footer}>
       <a href="#">Entenda como funciona a técnica pomodoro</a>
@@ -10,4 +10,4 @@ const Heading = () => {
   )
 }
 
-export default Heading
+export default Footer
