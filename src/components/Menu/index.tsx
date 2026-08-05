@@ -19,12 +19,7 @@ const Menu = () => {
   }
 
   useEffect(() => {
-    console.log("Theme mudou", theme, Date.now());
     document.documentElement.setAttribute("data-theme", theme);
-
-    return () => {
-      console.log("Este componente será atualizado");
-    }
   }, [theme]);
 
   return (
