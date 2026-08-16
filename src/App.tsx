@@ -22,7 +22,7 @@ const initialState: TaskStateModel = {
 function App() {
   const [state, setState] = useState(initialState);
 
-  return <Home state={state} setState={setState} />
+  return <Home />
 }
 
 export default App
