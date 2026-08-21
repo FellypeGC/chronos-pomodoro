@@ -53,6 +53,19 @@ const MainForm = () => {
         tasks: [...prevState.tasks, newTask],
       };
     });
+
+  }
+
+  function handleInterruptTask() {
+    setState((prevState) => {
+      return {
+        ...prevState,
+        activeTask: null,
+        currentCycle: nextCycle,
+        secondsRemaining: 0,
+        formattedSecondsRemaining: "00:00",
+      };
+    });
   }
 
   return (
@@ -79,20 +92,25 @@ const MainForm = () => {
       )}
 
       <div className="formRow">
-        {!state.activeTask ? (
+        {!state.activeTask && (
           <DefaultButton
             aria-label="Iniciar nova tarefa"
             title="Iniciar nova tarefa"
             type="submit"
             icon={<PlayCircleIcon />}
+            key="submit_button"
           />
-        ) : (
+        )} 
+        
+        {!!state.activeTask && (
           <DefaultButton
             aria-label="Interromper tarefa atual"
             title="Interromper tarefa atual"
             type="button"
             color="red"
             icon={<StopCircleIcon />}
+            key="interrupt_button"
+            onClick={handleInterruptTask}
           />
         )}
       </div>
