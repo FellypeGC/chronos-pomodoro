@@ -53,7 +53,6 @@ const MainForm = () => {
         tasks: [...prevState.tasks, newTask],
       };
     });
-
   }
 
   function handleInterruptTask() {
@@ -64,6 +63,12 @@ const MainForm = () => {
         currentCycle: nextCycle,
         secondsRemaining: 0,
         formattedSecondsRemaining: "00:00",
+        tasks: prevState.tasks.map((task) => {
+          if (prevState.activeTask && prevState.activeTask.id === task.id) {
+            return { ...task, interruptDate: Date.now() };
+          }
+          return task;
+        }),
       };
     });
   }
@@ -100,8 +105,8 @@ const MainForm = () => {
             icon={<PlayCircleIcon />}
             key="submit_button"
           />
-        )} 
-        
+        )}
+
         {!!state.activeTask && (
           <DefaultButton
             aria-label="Interromper tarefa atual"
