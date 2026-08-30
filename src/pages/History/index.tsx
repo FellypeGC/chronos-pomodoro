@@ -39,7 +39,10 @@ function History() {
     }));
   }, [state.tasks]);
 
-  
+  useEffect(() => {
+    document.title = "Histórico - Chornos Pomodoro";
+  }, []);
+
   useEffect(() => {
     if (!confirmClearHistory) return;
 

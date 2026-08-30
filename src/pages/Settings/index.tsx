@@ -4,7 +4,7 @@ import MainTemplate from "../../templates/MainTemplate";
 import DefaultInput from "../../components/DefaultInput/index";
 import DefaultButton from "../../components/DefaultButton";
 import { SaveIcon } from "lucide-react";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useTaskContext } from "../../contexts/TaskContext/useTaskContext";
 import { showMessage } from "../../adapters/showMessage";
 import { TaskActionTypes } from "../../contexts/TaskContext/taskAction";
@@ -14,6 +14,10 @@ const Settings = () => {
   const workTimeInput = useRef<HTMLInputElement>(null);
   const shortBreakTimeInput = useRef<HTMLInputElement>(null);
   const longBreakTimeInput = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    document.title = "Configurações - Chornos Pomodoro";
+  }, []);
 
   function handleSaveSettings(e: React.SubmitEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -53,8 +57,8 @@ const Settings = () => {
       payload: {
         workTime,
         shortBreakTime,
-        longBreakTime
-      }
+        longBreakTime,
+      },
     });
     showMessage.success("Configurações salvas");
   }
