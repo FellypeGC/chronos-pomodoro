@@ -2,7 +2,7 @@ import type { TaskStateModel } from "../../models/TaskStateModel";
 import { formatSecondsToMinutes } from "../../utils/formatSecondsToMinutes";
 import { getNextCycle } from "../../utils/getNextCycle";
 import { initialTaskState } from "./initialTaskState";
-import { TaskActionTypes, type TaskActionModel } from "./taskAction";
+import { TaskActionTypes, type TaskActionModel } from "./taskActions";
 
 export function taskReducer(
   state: TaskStateModel,
@@ -67,4 +67,6 @@ export function taskReducer(
       return { ...state, config: action.payload };
     }
   }
+
+  return state;
 }

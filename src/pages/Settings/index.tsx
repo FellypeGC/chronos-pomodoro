@@ -7,7 +7,7 @@ import { SaveIcon } from "lucide-react";
 import { useEffect, useRef } from "react";
 import { useTaskContext } from "../../contexts/TaskContext/useTaskContext";
 import { showMessage } from "../../adapters/showMessage";
-import { TaskActionTypes } from "../../contexts/TaskContext/taskAction";
+import { TaskActionTypes } from "../../contexts/TaskContext/taskActions";
 
 const Settings = () => {
   const { state, dispatch } = useTaskContext();

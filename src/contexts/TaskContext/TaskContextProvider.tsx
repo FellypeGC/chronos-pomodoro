@@ -3,7 +3,7 @@ import { TaskContext } from "./TaskContext";
 import { initialTaskState } from "./initialTaskState";
 import { taskReducer } from "./taskReducer";
 import { TimerWorkerManager } from "../../workers/TimerWorkerManager";
-import { TaskActionTypes } from "./taskAction";
+import { TaskActionTypes } from "./taskActions";
 import { loadBeep } from "../../utils/loadBeep";
 import type { TaskStateModel } from "../../models/TaskStateModel";
 

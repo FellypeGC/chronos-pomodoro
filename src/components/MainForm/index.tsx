@@ -7,14 +7,14 @@ import type { TaskModel } from "../../models/TaskModel";
 import { useTaskContext } from "../../contexts/TaskContext/useTaskContext";
 import { getNextCycle } from "../../utils/getNextCycle";
 import { getNextCycleType } from "../../utils/getNextCycleType";
-import { TaskActionTypes } from "../../contexts/TaskContext/taskAction";
+import { TaskActionTypes } from "../../contexts/TaskContext/taskActions";
 import Tips from "../Tips";
 import { showMessage } from "../../adapters/showMessage";
 
 const MainForm = () => {
   const { state, dispatch } = useTaskContext();
   const taskNameInput = useRef<HTMLInputElement>(null);
-  const lastTaskName = state.tasks[state.tasks.length - 1]?.name || '';
+  const lastTaskName = state.tasks[state.tasks.length - 1]?.name || "";
 
   const nextCycle = getNextCycle(state.currentCycle);
   const nextCycleType = getNextCycleType(nextCycle);
