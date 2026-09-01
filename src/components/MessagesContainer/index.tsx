@@ -17,7 +17,8 @@ const MessagesContainer = ({ children }: MessagesContainerProps) => {
         rtl={false}
         pauseOnFocusLoss
         draggable
-        theme="dark"
+        pauseOnHover
+        theme="light"
         transition={Bounce}
       />
     </>
