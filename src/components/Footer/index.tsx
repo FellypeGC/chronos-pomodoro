@@ -1,14 +1,14 @@
+import { useTranslation } from "react-i18next";
 import styles from "./styles.module.css";
 import RouterLink from "../RouterLink";
 
 const Footer = () => {
+  const { t } = useTranslation();
   return (
     <footer className={styles.footer}>
-      <RouterLink href="/about-pomodoro/">
-        Entenda como funciona a técnica pomodoro
-      </RouterLink>
+      <RouterLink href="/about-pomodoro/">{t("footer.about")}</RouterLink>
       <RouterLink href="/">
-        Chronos Pomodoro &copy; {new Date().getFullYear()}
+        {t("footer.rights", { year: new Date().getFullYear() })}
       </RouterLink>
     </footer>
   );

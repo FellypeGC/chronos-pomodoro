@@ -1,0 +1,137 @@
+{
+  "menu": {
+    "home": "Go to Home",
+    "history": "View History",
+    "settings": "Go to Settings",
+    "theme": "Change Theme",
+    "language": "Change Language",
+    "languageLabel": "Language"
+  },
+  "settings": {
+    "title": "Settings",
+    "description": "Modify the settings for focus time, short break and long break.",
+    "focus": "Focus",
+    "shortBreak": "Short break",
+    "longBreak": "Long break",
+    "save": "Save settings",
+    "saved": "Settings saved",
+    "language": "Language",
+    "languageDescription": "Choose the interface language",
+    "errors": {
+      "onlyNumbers": "Enter only numbers for ALL fields",
+      "focusRange": "Enter values between 1 and 99 for focus time",
+      "shortRange": "Enter values between 1 and 30 for short break",
+      "longRange": "Enter values between 1 and 60 for long break"
+    }
+  },
+  "common": {
+    "portuguese": "Portuguese",
+    "english": "English"
+  },
+  "footer": {
+    "about": "Learn how the Pomodoro technique works",
+    "rights": "Chronos Pomodoro © {{year}}"
+  },
+  "home": {
+    "title": "Home - Chronos Pomodoro"
+  },
+  "history": {
+    "title": "History - Chronos Pomodoro",
+    "heading": "History",
+    "clearAll": "Clear all history",
+    "clearTitle": "Clear history",
+    "confirmClear": "Are you sure?",
+    "task": "Task",
+    "duration": "Duration",
+    "date": "Date",
+    "status": "Status",
+    "type": "Type",
+    "empty": "No tasks found yet.",
+    "types": {
+      "workTime": "Focus",
+      "shortBreakTime": "Short break",
+      "longBreakTime": "Long break"
+    },
+    "statuses": {
+      "complete": "Completed",
+      "interrupted": "Interrupted",
+      "inProgress": "In progress",
+      "abandoned": "Abandoned"
+    }
+  },
+  "about": {
+    "title": "About Pomodoro Technique - Chronos Pomodoro",
+    "heading": "The Pomodoro Technique 🍅",
+    "p1": "The Pomodoro Technique is a productivity methodology created by <strong>Francesco Cirillo</strong>, which consists of dividing work into time blocks (the famous \"Pomodoros\") interspersed with breaks. The goal is to maintain total focus for a short period and ensure rest to avoid mental fatigue.",
+    "howItWorks": "How does the traditional Pomodoro work?",
+    "step1": "<strong>1. Define a task</strong> you want to accomplish.",
+    "step2": "<strong>2. Work on it for 25 minutes</strong> without interruptions.",
+    "step3": "<strong>3. Take a short break of 5 minutes</strong>.",
+    "step4": "<strong>4. Every 4 cycles, take a long break</strong> (usually 15 to 30 minutes).",
+    "differential": "But <strong>Chronos Pomodoro</strong> has a differential 🚀",
+    "differentialP": "Our app follows the original concept, but with some improvements and customizations to make the process even more efficient:",
+    "customTime": "⚙️ Time customization",
+    "customTimeP": "You can configure focus time, short break and long break however you want! Just access the <link>settings page</link> and adjust the minutes as you prefer.",
+    "cyclesTitle": "🔁 Cycles organized in sequence",
+    "cyclesP": "Each completed cycle automatically adds a new task to your history, and the app already suggests the next cycle (focus or break).",
+    "ourPattern": "Our pattern:",
+    "odd": "<strong>Odd</strong> cycles: Work (focus).",
+    "even": "<strong>Even</strong> cycles: Short break.",
+    "cycle8": "<strong>Cycle 8</strong>: Special long break to reset the full cycle.",
+    "visualization": "🍅 Cycle visualization",
+    "visualizationP": "Right below the timer, you will see colored dots representing the cycles:",
+    "yellow": "🟡 Yellow: Work cycle (focus).",
+    "green": "🟢 Green: Short break.",
+    "blue": "🔵 Blue: Long break (appears every 8 cycles).",
+    "visualizationP2": "So you always know where you are in the process and what comes next. No more paper notes or mental calculations!",
+    "historyAuto": "📊 Automatic history",
+    "historyAutoP": "All your completed tasks and cycles are saved in the <link>history</link>, with completed or interrupted status. This way you can track your evolution over time.",
+    "why": "Why use Chronos Pomodoro?",
+    "why1": "✅ Organize your focus with clarity.",
+    "why2": "✅ Work and rest in the right measure.",
+    "why3": "✅ Customize your own cycles and times.",
+    "why4": "✅ Track your history automatically.",
+    "ready": "<strong>Ready to focus?</strong> Let's go <link>back to the home page</link> and start your Pomodoros! 🍅🚀",
+    "quote": "\"Total focus, no rush, no pause, just go!\" 💪🧘‍♂️"
+  },
+  "notFound": {
+    "title": "Page not found - Chronos Pomodoro",
+    "heading": "Page not found",
+    "p1": "Oops! It seems the page you are trying to access does not exist. Maybe it took a vacation, decided to explore the universe or got lost somewhere between two black holes. 🌌",
+    "p2a": "But don't worry, you are not lost in space (yet). You can safely return to the",
+    "homeLink": "main page",
+    "p2b": "or",
+    "historyLink": "history",
+    "p2c": "— or stay here and pretend you found a secret page that only the coolest explorers can access. 🧭✨",
+    "p3": "If you think this page should exist (or if you want to chat about time travel and wormholes), just get in touch. Otherwise, use the menu to return to the real world.",
+    "p4": "Meanwhile, here is a reflection: \"If a page does not exist on the internet, did it really exist?\" 🤔💭"
+  },
+  "mainForm": {
+    "taskLabel": "Task",
+    "placeholder": "Type something",
+    "required": "Enter the task name",
+    "started": "Task started",
+    "interrupted": "Task interrupted",
+    "startAria": "Start new task",
+    "interruptAria": "Interrupt current task"
+  },
+  "tips": {
+    "focus": "Focus for {{time}}min",
+    "shortBreak": "Rest for {{time}}min",
+    "longBreak": "Long break",
+    "nextFocus": "Next cycle is <b>{{time}}min</b>",
+    "nextShort": "Next break is {{time}}min",
+    "nextLong": "Next break will be long"
+  },
+  "cycles": {
+    "label": "Cycles:",
+    "focus": "focus",
+    "short": "short break",
+    "long": "long break",
+    "indicator": "Cycle indicator for {{type}}"
+  },
+  "dialog": {
+    "confirm": "Confirm action and close",
+    "cancel": "Cancel action and close"
+  }
+}

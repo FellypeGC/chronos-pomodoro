@@ -1,31 +1,43 @@
-import { HistoryIcon, HouseIcon, MoonIcon, SettingsIcon, SunIcon } from "lucide-react"
-import styles from "./styles.module.css"
+import {
+  HistoryIcon,
+  HouseIcon,
+  Languages,
+  MoonIcon,
+  SettingsIcon,
+  SunIcon,
+} from "lucide-react";
+import styles from "./styles.module.css";
 import { useState, useEffect } from "react";
 import RouterLink from "../RouterLink";
+import LanguageToggle from "../LanguageToggle";
+import { useTranslation } from "react-i18next";
 
 type AvailableThemes = "dark" | "light";
 
 const Menu = () => {
   const [theme, setTheme] = useState<AvailableThemes>(() => {
-    const storageItem = localStorage.getItem("theme") as AvailableThemes || "dark";
+    const storageItem =
+      (localStorage.getItem("theme") as AvailableThemes) || "dark";
     return storageItem;
   });
 
   const nextThemeIcon = {
     dark: <SunIcon />,
-    light: <MoonIcon />
-  }
+    light: <MoonIcon />,
+  };
 
   function handleThemeChange(
-    event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
+    event: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
   ) {
     event.preventDefault();
 
-    setTheme(prevTheme => {
+    setTheme((prevTheme) => {
       const nextTheme = prevTheme === "dark" ? "light" : "dark";
       return nextTheme;
     });
   }
+
+  const { t } = useTranslation();
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
@@ -35,40 +47,41 @@ const Menu = () => {
   return (
     <nav className={styles.menu}>
       <RouterLink
-        className={styles.menuLink} 
-        href='/'
-        aria-label="Ir para a Home"
-        title="Ir para a Home"
+        className={styles.menuLink}
+        href="/"
+        aria-label={t("menu.home")}
+        title={t("menu.home")}
       >
         <HouseIcon />
       </RouterLink>
       <RouterLink
-        className={styles.menuLink} 
-        href='/history/'
-        aria-label="Ver Histórico"
-        title="Ver Histórico">
+        className={styles.menuLink}
+        href="/history/"
+        aria-label={t("menu.history")}
+        title={t("menu.history")}
+      >
         <HistoryIcon />
       </RouterLink>
       <RouterLink
-        className={styles.menuLink} 
-        href='/settings/'
-        aria-label="Ir para Configurações"
-        title="Ir para Configurações"
+        className={styles.menuLink}
+        href="/settings/"
+        aria-label={t("menu.settings")}
+        title={t("menu.settings")}
       >
         <SettingsIcon />
       </RouterLink>
       <a
-        className={styles.menuLink} 
-        href='#'
-        aria-label="Mudar Tema"
-        title="Mudar Tema"
+        className={styles.menuLink}
+        href="#"
+        aria-label={t("menu.theme")}
+        title={t("menu.theme")}
         onClick={handleThemeChange}
       >
         {nextThemeIcon[theme]}
       </a>
+      <LanguageToggle icon={<Languages />} />
     </nav>
-  )
-}
+  );
+};
 
-export default Menu
-
+export default Menu;

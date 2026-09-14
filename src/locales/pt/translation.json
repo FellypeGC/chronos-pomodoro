@@ -1,0 +1,137 @@
+{
+  "menu": {
+    "home": "Ir para a Home",
+    "history": "Ver Histórico",
+    "settings": "Ir para Configurações",
+    "theme": "Mudar Tema",
+    "language": "Mudar Idioma",
+    "languageLabel": "Idioma"
+  },
+  "settings": {
+    "title": "Configurações",
+    "description": "Modifique as configurações para tempo de foco, descanso curto e descanso longo.",
+    "focus": "Foco",
+    "shortBreak": "Descanso curto",
+    "longBreak": "Descanso longo",
+    "save": "Salvar configurações",
+    "saved": "Configurações salvas",
+    "language": "Idioma",
+    "languageDescription": "Escolha o idioma da interface",
+    "errors": {
+      "onlyNumbers": "Digite apenas números para TODOS os campos",
+      "focusRange": "Digite valores entre 1 e 99 para tempo de foco",
+      "shortRange": "Digite valores entre 1 e 30 para descanso curto",
+      "longRange": "Digite valores entre 1 e 60 para descanso longo"
+    }
+  },
+  "common": {
+    "portuguese": "Português",
+    "english": "Inglês"
+  },
+  "footer": {
+    "about": "Entenda como funciona a técnica pomodoro",
+    "rights": "Chronos Pomodoro © {{year}}"
+  },
+  "home": {
+    "title": "Home - Chronos Pomodoro"
+  },
+  "history": {
+    "title": "Histórico - Chronos Pomodoro",
+    "heading": "Histórico",
+    "clearAll": "Apagar todo o histórico",
+    "clearTitle": "Apagar histórico",
+    "confirmClear": "Tem certeza?",
+    "task": "Tarefa",
+    "duration": "Duração",
+    "date": "Data",
+    "status": "Status",
+    "type": "Tipo",
+    "empty": "Ainda não existem tarefas encontradas.",
+    "types": {
+      "workTime": "Foco",
+      "shortBreakTime": "Descanso curto",
+      "longBreakTime": "Descanso longo"
+    },
+    "statuses": {
+      "complete": "Completa",
+      "interrupted": "Interrompida",
+      "inProgress": "Em progresso",
+      "abandoned": "Abandonada"
+    }
+  },
+  "about": {
+    "title": "Entenda a Técnica Pomodoro - Chronos Pomodoro",
+    "heading": "A Técnica Pomodoro 🍅",
+    "p1": "A Técnica Pomodoro é uma metodologia de produtividade criada por <strong>Francesco Cirillo</strong>, que consiste em dividir o trabalho em blocos de tempo (os famosos \"Pomodoros\") intercalados com pausas. O objetivo é manter o foco total por um período curto e garantir descansos para evitar o cansaço mental.",
+    "howItWorks": "Como funciona o Pomodoro tradicional?",
+    "step1": "<strong>1. Defina uma tarefa</strong> que você deseja realizar.",
+    "step2": "<strong>2. Trabalhe nela por 25 minutos</strong> sem interrupções.",
+    "step3": "<strong>3. Faça uma pausa curta de 5 minutos</strong>.",
+    "step4": "<strong>4. A cada 4 ciclos, faça uma pausa longa</strong> (geralmente 15 a 30 minutos).",
+    "differential": "Mas no <strong>Chronos Pomodoro</strong> tem um diferencial 🚀",
+    "differentialP": "Nosso app segue o conceito original, mas com algumas melhorias e personalizações pra deixar o processo ainda mais eficiente:",
+    "customTime": "⚙️ Personalização do tempo",
+    "customTimeP": "Você pode configurar o tempo de foco, descanso curto e descanso longo do jeito que quiser! Basta acessar a <link>página de configurações</link> e ajustar os minutos como preferir.",
+    "cyclesTitle": "🔁 Ciclos organizados em sequência",
+    "cyclesP": "A cada ciclo completado, uma nova task é adicionada automaticamente ao seu histórico, e o app já sugere o próximo ciclo (foco ou descanso).",
+    "ourPattern": "Nosso padrão:",
+    "odd": "Ciclos <strong>ímpares</strong>: Trabalho (foco).",
+    "even": "Ciclos <strong>pares</strong>: Descanso curto.",
+    "cycle8": "Ciclo <strong>8</strong>: Descanso longo especial, pra resetar o ciclo completo.",
+    "visualization": "🍅 Visualização dos ciclos",
+    "visualizationP": "Logo abaixo do cronômetro, você verá bolinhas coloridas representando os ciclos:",
+    "yellow": "🟡 Amarelo: Ciclo de trabalho (foco).",
+    "green": "🟢 Verde: Descanso curto.",
+    "blue": "🔵 Azul: Descanso longo (aparece a cada 8 ciclos).",
+    "visualizationP2": "Assim, você sempre sabe em que parte do processo está e o que vem a seguir. Não precisa mais anotar no papel ou ficar calculando de cabeça!",
+    "historyAuto": "📊 Histórico automático",
+    "historyAutoP": "Todas as suas tarefas e ciclos concluídos ficam salvos no <link>histórico</link>, com status de completas ou interrompidas. Assim, você consegue acompanhar sua evolução ao longo do tempo.",
+    "why": "Por que usar o Chronos Pomodoro?",
+    "why1": "✅ Organize seu foco com clareza.",
+    "why2": "✅ Trabalhe e descanse na medida certa.",
+    "why3": "✅ Personalize seus próprios ciclos e tempos.",
+    "why4": "✅ Acompanhe seu histórico automaticamente.",
+    "ready": "<strong>Pronto pra focar?</strong> Bora lá <link>voltar para a página inicial</link> e iniciar seus Pomodoros! 🍅🚀",
+    "quote": "\"Foco total, sem pressa, sem pausa, só vai!\" 💪🧘‍♂️"
+  },
+  "notFound": {
+    "title": "Página não encontrada - Chronos Pomodoro",
+    "heading": "Página não encontrada",
+    "p1": "Opa! Parece que a página que você está tentando acessar não existe. Talvez ela tenha tirado férias, resolvido explorar o universo ou se perdido em algum lugar entre dois buracos negros. 🌌",
+    "p2a": "Mas calma, você não está perdido no espaço (ainda). Dá pra voltar em segurança para a",
+    "homeLink": "página principal",
+    "p2b": "ou",
+    "historyLink": "para o histórico",
+    "p2c": "— ou pode ficar por aqui e fingir que achou uma página secreta que só os exploradores mais legais conseguem acessar. 🧭✨",
+    "p3": "Se você acha que essa página deveria existir (ou se quiser bater um papo sobre viagem no tempo e buracos de minhoca), é só entrar em contato. Caso contrário, use o menu para voltar ao mundo real.",
+    "p4": "Enquanto isso, fica aqui uma reflexão: \"Se uma página não existe na internet, será que ela existiu de verdade?\" 🤔💭"
+  },
+  "mainForm": {
+    "taskLabel": "Tarefa",
+    "placeholder": "Digite algo",
+    "required": "Digite o nome da tarefa",
+    "started": "Tarefa iniciada",
+    "interrupted": "Tarefa interrompida",
+    "startAria": "Iniciar nova tarefa",
+    "interruptAria": "Interromper tarefa atual"
+  },
+  "tips": {
+    "focus": "Foque por {{time}}min",
+    "shortBreak": "Descanse por {{time}}min",
+    "longBreak": "Descanso longo",
+    "nextFocus": "Próximo ciclo é de <b>{{time}}min</b>",
+    "nextShort": "Próximo descanso é de {{time}}min",
+    "nextLong": "Próximo descanso será longo"
+  },
+  "cycles": {
+    "label": "Ciclos:",
+    "focus": "foco",
+    "short": "pausa curta",
+    "long": "descanso longo",
+    "indicator": "Indicador de ciclo de {{type}}"
+  },
+  "dialog": {
+    "confirm": "Confirmar ação e fechar",
+    "cancel": "Cancelar ação e fechar"
+  }
+}

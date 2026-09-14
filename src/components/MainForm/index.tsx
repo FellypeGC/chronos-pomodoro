@@ -1,4 +1,5 @@
 import { PlayCircleIcon, StopCircleIcon } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import Cycles from "../Cycles";
 import DefaultButton from "../DefaultButton";
 import DefaultInput from "../DefaultInput";
@@ -13,6 +14,7 @@ import { showMessage } from "../../adapters/showMessage";
 
 const MainForm = () => {
   const { state, dispatch } = useTaskContext();
+  const { t } = useTranslation();
   const taskNameInput = useRef<HTMLInputElement>(null);
   const lastTaskName = state.tasks[state.tasks.length - 1]?.name || "";
 
@@ -28,7 +30,7 @@ const MainForm = () => {
     const taskName = taskNameInput.current.value.trim();
 
     if (!taskName) {
-      showMessage.warn("Digite o nome da tarefa");
+      showMessage.warn(t("mainForm.required"));
       return;
     }
 
@@ -44,12 +46,12 @@ const MainForm = () => {
 
     dispatch({ type: TaskActionTypes.START_TASK, payload: newTask });
 
-    showMessage.success("Tarefa iniciada");
+    showMessage.success(t("mainForm.started"));
   }
 
   function handleInterruptTask() {
     showMessage.dismiss();
-    showMessage.error("Tarefa interrompida");
+    showMessage.error(t("mainForm.interrupted"));
     dispatch({ type: TaskActionTypes.INTERRUPT_TASK });
   }
 
@@ -59,8 +61,8 @@ const MainForm = () => {
         <DefaultInput
           id="meuInput"
           type="text"
-          labelText="Task"
-          placeholder="Digite algo"
+          labelText={t("mainForm.taskLabel")}
+          placeholder={t("mainForm.placeholder")}
           ref={taskNameInput}
           disabled={!!state.activeTask}
           defaultValue={lastTaskName}
@@ -80,8 +82,8 @@ const MainForm = () => {
       <div className="formRow">
         {!state.activeTask && (
           <DefaultButton
-            aria-label="Iniciar nova tarefa"
-            title="Iniciar nova tarefa"
+            aria-label={t("mainForm.startAria")}
+            title={t("mainForm.startAria")}
             type="submit"
             icon={<PlayCircleIcon />}
             key="submit_button"
@@ -90,8 +92,8 @@ const MainForm = () => {
 
         {!!state.activeTask && (
           <DefaultButton
-            aria-label="Interromper tarefa atual"
-            title="Interromper tarefa atual"
+            aria-label={t("mainForm.interruptAria")}
+            title={t("mainForm.interruptAria")}
             type="button"
             color="red"
             icon={<StopCircleIcon />}

@@ -5,19 +5,24 @@ import DefaultInput from "../../components/DefaultInput/index";
 import DefaultButton from "../../components/DefaultButton";
 import { SaveIcon } from "lucide-react";
 import { useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
 import { useTaskContext } from "../../contexts/TaskContext/useTaskContext";
 import { showMessage } from "../../adapters/showMessage";
 import { TaskActionTypes } from "../../contexts/TaskContext/taskActions";
+import brFlag from "../../assets/flags/br.svg";
+import usFlag from "../../assets/flags/us.svg";
+import styles from "./styles.module.css";
 
 const Settings = () => {
   const { state, dispatch } = useTaskContext();
+  const { t, i18n } = useTranslation();
   const workTimeInput = useRef<HTMLInputElement>(null);
   const shortBreakTimeInput = useRef<HTMLInputElement>(null);
   const longBreakTimeInput = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    document.title = "Configurações - Chornos Pomodoro";
-  }, []);
+    document.title = `${t("settings.title")} - Chronos Pomodoro`;
+  }, [t]);
 
   function handleSaveSettings(e: React.SubmitEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -30,19 +35,19 @@ const Settings = () => {
     const longBreakTime = Number(longBreakTimeInput.current?.value);
 
     if (isNaN(workTime) || isNaN(shortBreakTime) || isNaN(longBreakTime)) {
-      formErrors.push("Digite apenas números para TODOS os campos");
+      formErrors.push(t("settings.errors.onlyNumbers"));
     }
 
     if (workTime < 1 || workTime > 99) {
-      formErrors.push("Digite valores entre 1 e 99 para tempo de foco");
+      formErrors.push(t("settings.errors.focusRange"));
     }
 
     if (shortBreakTime < 1 || shortBreakTime > 30) {
-      formErrors.push("Digite valores entre 1 e 30 para descanso curto");
+      formErrors.push(t("settings.errors.shortRange"));
     }
 
     if (longBreakTime < 1 || longBreakTime > 60) {
-      formErrors.push("Digite valores entre 1 e 60 para descanso longo");
+      formErrors.push(t("settings.errors.longRange"));
     }
 
     if (formErrors.length > 0) {
@@ -60,20 +65,44 @@ const Settings = () => {
         longBreakTime,
       },
     });
-    showMessage.success("Configurações salvas");
+    showMessage.success(t("settings.saved"));
   }
 
   return (
     <MainTemplate>
       <Container>
-        <Heading>Configurações</Heading>
+        <Heading>{t("settings.title")}</Heading>
       </Container>
 
       <Container>
-        <p style={{ textAlign: "center" }}>
-          Modifique as configurações para tempo de foco, descanso curto e
-          descanso longo.
-        </p>
+        <p style={{ textAlign: "center" }}>{t("settings.description")}</p>
+      </Container>
+
+      <Container>
+        <div className={styles.languageSection}>
+          <h3 className={styles.languageTitle}>{t("settings.language")}</h3>
+          <p className={styles.languageDescription}>
+            {t("settings.languageDescription")}
+          </p>
+          <div className={styles.selectWrapper}>
+            <select
+              className={styles.languageSelect}
+              value={(i18n.resolvedLanguage || i18n.language || "en").startsWith("pt") ? "pt" : "en"}
+              onChange={(e) => i18n.changeLanguage(e.target.value)}
+              aria-label={t("menu.languageLabel")}
+            >
+              <option value="pt">{t("common.portuguese")}</option>
+              <option value="en">{t("common.english")}</option>
+            </select>
+            <span className={styles.flagPreview}>
+              <img
+                src={(i18n.resolvedLanguage || i18n.language || "en").startsWith("pt") ? brFlag : usFlag}
+                alt=""
+                className={styles.flagImg}
+              />
+            </span>
+          </div>
+        </div>
       </Container>
 
       <Container>
@@ -81,7 +110,7 @@ const Settings = () => {
           <div className="formRow">
             <DefaultInput
               id="workTime"
-              labelText="Foco"
+              labelText={t("settings.focus")}
               ref={workTimeInput}
               defaultValue={state.config.workTime}
               type="number"
@@ -90,7 +119,7 @@ const Settings = () => {
           <div className="formRow">
             <DefaultInput
               id="shortBreakTime"
-              labelText="Descanso curto"
+              labelText={t("settings.shortBreak")}
               ref={shortBreakTimeInput}
               defaultValue={state.config.shortBreakTime}
               type="number"
@@ -99,7 +128,7 @@ const Settings = () => {
           <div className="formRow">
             <DefaultInput
               id="longBreakTime"
-              labelText="Descanso longo"
+              labelText={t("settings.longBreak")}
               ref={longBreakTimeInput}
               defaultValue={state.config.longBreakTime}
               type="number"
@@ -107,9 +136,10 @@ const Settings = () => {
           </div>
           <div className="formRow">
             <DefaultButton
+              type="submit"
               icon={<SaveIcon />}
-              aria-label="Salvar configurações"
-              title="Salvar configurações"
+              aria-label={t("settings.save")}
+              title={t("settings.save")}
             />
           </div>
         </form>

@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { useTranslation, Trans } from "react-i18next";
 import Container from "../../components/Container";
 import GenericHtml from "../../components/GenericHtml";
 import Heading from "../../components/Heading";
@@ -6,123 +7,87 @@ import RouterLink from "../../components/RouterLink";
 import MainTemplate from "../../templates/MainTemplate";
 
 function AboutPomodoro() {
+  const { t } = useTranslation();
   useEffect(() => {
-    document.title = "Entenda a Técnica Pomodoro - Chornos Pomodoro";
-  }, []);
+    document.title = t("about.title");
+  }, [t]);
 
   return (
     <MainTemplate>
       <Container>
         <GenericHtml>
-          <Heading>A Técnica Pomodoro 🍅</Heading>
+          <Heading>{t("about.heading")}</Heading>
 
-          <p>
-            A Técnica Pomodoro é uma metodologia de produtividade criada por{" "}
-            <strong>Francesco Cirillo</strong>, que consiste em dividir o
-            trabalho em blocos de tempo (os famosos "Pomodoros") intercalados
-            com pausas. O objetivo é manter o foco total por um período curto e
-            garantir descansos para evitar o cansaço mental.
-          </p>
+          <p dangerouslySetInnerHTML={{ __html: t("about.p1") }} />
 
           <img src="https://placehold.co/1920x1080" alt="" />
 
-          <h2>Como funciona o Pomodoro tradicional?</h2>
+          <h2>{t("about.howItWorks")}</h2>
           <ul>
-            <li>
-              <strong>1. Defina uma tarefa</strong> que você deseja realizar.
-            </li>
-            <li>
-              <strong>2. Trabalhe nela por 25 minutos</strong> sem interrupções.
-            </li>
-            <li>
-              <strong>3. Faça uma pausa curta de 5 minutos</strong>.
-            </li>
-            <li>
-              <strong>4. A cada 4 ciclos, faça uma pausa longa</strong>{" "}
-              (geralmente 15 a 30 minutos).
-            </li>
+            <li dangerouslySetInnerHTML={{ __html: t("about.step1") }} />
+            <li dangerouslySetInnerHTML={{ __html: t("about.step2") }} />
+            <li dangerouslySetInnerHTML={{ __html: t("about.step3") }} />
+            <li dangerouslySetInnerHTML={{ __html: t("about.step4") }} />
           </ul>
 
-          <h2>
-            Mas no <strong>Chronos Pomodoro</strong> tem um diferencial 🚀
-          </h2>
+          <h2 dangerouslySetInnerHTML={{ __html: t("about.differential") }} />
 
+          <p>{t("about.differentialP")}</p>
+
+          <h3>{t("about.customTime")}</h3>
           <p>
-            Nosso app segue o conceito original, mas com algumas melhorias e
-            personalizações pra deixar o processo ainda mais eficiente:
+            <Trans
+              i18nKey="about.customTimeP"
+              components={{ link: <RouterLink href="/settings/">link</RouterLink> }}
+            />
           </p>
 
-          <h3>⚙️ Personalização do tempo</h3>
+          <h3>{t("about.cyclesTitle")}</h3>
+          <p>{t("about.cyclesP")}</p>
           <p>
-            Você pode configurar o tempo de foco, descanso curto e descanso
-            longo do jeito que quiser! Basta acessar a{" "}
-            <RouterLink href="/settings/">página de configurações</RouterLink> e
-            ajustar os minutos como preferir.
-          </p>
-
-          <h3>🔁 Ciclos organizados em sequência</h3>
-          <p>
-            A cada ciclo completado, uma nova task é adicionada automaticamente
-            ao seu histórico, e o app já sugere o próximo ciclo (foco ou
-            descanso).
-          </p>
-          <p>
-            <strong>Nosso padrão:</strong>
+            <strong>{t("about.ourPattern")}</strong>
           </p>
           <ul>
-            <li>
-              Ciclos <strong>ímpares</strong>: Trabalho (foco).
-            </li>
-            <li>
-              Ciclos <strong>pares</strong>: Descanso curto.
-            </li>
-            <li>
-              Ciclo <strong>8</strong>: Descanso longo especial, pra resetar o
-              ciclo completo.
-            </li>
+            <li dangerouslySetInnerHTML={{ __html: t("about.odd") }} />
+            <li dangerouslySetInnerHTML={{ __html: t("about.even") }} />
+            <li dangerouslySetInnerHTML={{ __html: t("about.cycle8") }} />
           </ul>
 
-          <h3>🍅 Visualização dos ciclos</h3>
-          <p>
-            Logo abaixo do cronômetro, você verá bolinhas coloridas
-            representando os ciclos:
-          </p>
+          <h3>{t("about.visualization")}</h3>
+          <p>{t("about.visualizationP")}</p>
           <ul>
-            <li>🟡 Amarelo: Ciclo de trabalho (foco).</li>
-            <li>🟢 Verde: Descanso curto.</li>
-            <li>🔵 Azul: Descanso longo (aparece a cada 8 ciclos).</li>
+            <li>{t("about.yellow")}</li>
+            <li>{t("about.green")}</li>
+            <li>{t("about.blue")}</li>
+          </ul>
+
+          <p>{t("about.visualizationP2")}</p>
+
+          <h3>{t("about.historyAuto")}</h3>
+          <p>
+            <Trans
+              i18nKey="about.historyAutoP"
+              components={{ link: <RouterLink href="/history">history</RouterLink> }}
+            />
+          </p>
+
+          <h2>{t("about.why")}</h2>
+          <ul>
+            <li>{t("about.why1")}</li>
+            <li>{t("about.why2")}</li>
+            <li>{t("about.why3")}</li>
+            <li>{t("about.why4")}</li>
           </ul>
 
           <p>
-            Assim, você sempre sabe em que parte do processo está e o que vem a
-            seguir. Não precisa mais anotar no papel ou ficar calculando de
-            cabeça!
-          </p>
-
-          <h3>📊 Histórico automático</h3>
-          <p>
-            Todas as suas tarefas e ciclos concluídos ficam salvos no{" "}
-            <RouterLink href="/history">histórico</RouterLink>, com status de
-            completas ou interrompidas. Assim, você consegue acompanhar sua
-            evolução ao longo do tempo.
-          </p>
-
-          <h2>Por que usar o Chronos Pomodoro?</h2>
-          <ul>
-            <li>✅ Organize seu foco com clareza.</li>
-            <li>✅ Trabalhe e descanse na medida certa.</li>
-            <li>✅ Personalize seus próprios ciclos e tempos.</li>
-            <li>✅ Acompanhe seu histórico automaticamente.</li>
-          </ul>
-
-          <p>
-            <strong>Pronto pra focar?</strong> Bora lá{" "}
-            <RouterLink href="/">voltar para a página inicial</RouterLink> e
-            iniciar seus Pomodoros! 🍅🚀
+            <Trans
+              i18nKey="about.ready"
+              components={{ link: <RouterLink href="/">link</RouterLink> }}
+            />
           </p>
 
           <p>
-            <em>"Foco total, sem pressa, sem pausa, só vai!"</em> 💪🧘‍♂️
+            <em>{t("about.quote")}</em>
           </p>
         </GenericHtml>
       </Container>

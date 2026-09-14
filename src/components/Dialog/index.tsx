@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { type ToastContentProps } from "react-toastify";
 import DefaultButton from "../DefaultButton";
 import { ThumbsDownIcon, ThumbsUpIcon } from "lucide-react";
@@ -5,6 +6,7 @@ import { ThumbsDownIcon, ThumbsUpIcon } from "lucide-react";
 import styles from "./styles.module.css";
 
 const Dialog = ({ closeToast, data }: ToastContentProps<string>) => {
+  const { t } = useTranslation();
   return (
     <>
       <div className={styles.container}>
@@ -14,15 +16,15 @@ const Dialog = ({ closeToast, data }: ToastContentProps<string>) => {
           <DefaultButton
             onClick={() => closeToast(true)}
             icon={<ThumbsUpIcon />}
-            aria-label="Confirmar ação e fechar"
-            title="Confirmar ação e fechar"
+            aria-label={t("dialog.confirm")}
+            title={t("dialog.confirm")}
           />
           <DefaultButton
             onClick={() => closeToast(false)}
             icon={<ThumbsDownIcon />}
             color="red"
-            aria-label="Cancelar ação e fechar"
-            title="Cancelar ação e fechar"
+            aria-label={t("dialog.cancel")}
+            title={t("dialog.cancel")}
           />
         </div>
       </div>

@@ -1,0 +1,48 @@
+.languageSection {
+  background: var(--gray-800);
+  border-radius: 0.8rem;
+  padding: 2.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  align-items: center;
+  text-align: center;
+}
+
+.languageTitle {
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.languageDescription {
+  font-size: 1.4rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.selectWrapper {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.languageSelect {
+  padding: 0.8rem 2.4rem 0.8rem 1.2rem;
+  border-radius: 0.6rem;
+  border: 0.2rem solid var(--primary);
+  background: var(--gray-700);
+  color: var(--text-default);
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+.flagPreview {
+  display: inline-flex;
+}
+
+.flagImg {
+  width: 3.2rem;
+  height: 2.2rem;
+  object-fit: cover;
+  border-radius: 0.2rem;
+}

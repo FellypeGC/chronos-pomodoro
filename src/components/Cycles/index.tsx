@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { useTaskContext } from "../../contexts/TaskContext/useTaskContext";
 import { getNextCycle } from "../../utils/getNextCycle";
 import styles from "./styles.module.css";
@@ -5,18 +6,19 @@ import { getNextCycleType } from "../../utils/getNextCycleType";
 
 const Cycles = () => {
   const { state } = useTaskContext();
+  const { t } = useTranslation();
 
   const cycleStep = Array.from({ length: state.currentCycle });
-  
+
   const cycleDescriptionMap = {
-    workTime: "foco",
-    shortBreakTime: "pausa curta",
-    longBreakTime: "descanso longo"
-  }
+    workTime: t("cycles.focus"),
+    shortBreakTime: t("cycles.short"),
+    longBreakTime: t("cycles.long"),
+  };
 
   return (
     <div className={styles.cycles}>
-      <span>Ciclos:</span>
+      <span>{t("cycles.label")}</span>
 
       <div className={styles.cycleDots}>
         {cycleStep.map((_, index) => {
@@ -26,8 +28,8 @@ const Cycles = () => {
             <span
               key={nextCycle}
               className={`${styles.cycleDot} ${styles[nextCycleType]}`}
-              aria-label={ `Indicador de ciclo de ${cycleDescriptionMap[nextCycleType]}`}
-              title={`Indicador de ciclo de ${cycleDescriptionMap[nextCycleType]}`}
+              aria-label={t("cycles.indicator", { type: cycleDescriptionMap[nextCycleType] })}
+              title={t("cycles.indicator", { type: cycleDescriptionMap[nextCycleType] })}
             ></span>
           );
         })}

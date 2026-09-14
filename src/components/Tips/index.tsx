@@ -1,28 +1,28 @@
+import { useTranslation } from "react-i18next";
 import { useTaskContext } from "../../contexts/TaskContext/useTaskContext";
 import { getNextCycle } from "../../utils/getNextCycle";
 import { getNextCycleType } from "../../utils/getNextCycleType";
 
 const Tips = () => {
   const { state } = useTaskContext();
-    const nextCycle = getNextCycle(state.currentCycle);
+  const { t } = useTranslation();
+  const nextCycle = getNextCycle(state.currentCycle);
   const nextCycleType = getNextCycleType(nextCycle);
 
   const tipsForActiveTask = {
-    workTime: <span>Foque por {state.config.workTime}min</span>,
-    shortBreakTime: <span>Descanse por {state.config.shortBreakTime}min</span>,
-    longBreakTime: <span>Descanso longo</span>,
+    workTime: <span>{t("tips.focus", { time: state.config.workTime })}</span>,
+    shortBreakTime: <span>{t("tips.shortBreak", { time: state.config.shortBreakTime })}</span>,
+    longBreakTime: <span>{t("tips.longBreak")}</span>,
   };
 
   const tipsForNoActiveTask = {
     workTime: (
-      <span>
-        Próximo ciclo é de <b>{state.config.workTime}min</b>
-      </span>
+      <span dangerouslySetInnerHTML={{ __html: t("tips.nextFocus", { time: state.config.workTime }) }} />
     ),
     shortBreakTime: (
-      <span>Próximo descanso é de {state.config.shortBreakTime}min</span>
+      <span>{t("tips.nextShort", { time: state.config.shortBreakTime })}</span>
     ),
-    longBreakTime: <span>Próximo descanso será longo</span>,
+    longBreakTime: <span>{t("tips.nextLong")}</span>,
   };
 
   return (
