@@ -55,21 +55,21 @@ const LanguageToggle = ({ icon }: LanguageToggleProps) => {
         <div role="listbox" className={styles.dropdown}>
           <button
             role="option"
-            aria-selected={currentLang === "pt"}
-            className={`${styles.option} ${currentLang === "pt" ? styles.optionActive : ""}`}
-            onClick={() => handleSelect("pt")}
-          >
-            <img src={brFlag} alt="" className={styles.flag} />
-            {t("common.portuguese")}
-          </button>
-          <button
-            role="option"
             aria-selected={currentLang === "en"}
             className={`${styles.option} ${currentLang === "en" ? styles.optionActive : ""}`}
             onClick={() => handleSelect("en")}
           >
             <img src={usFlag} alt="" className={styles.flag} />
             {t("common.english")}
+          </button>
+          <button
+            role="option"
+            aria-selected={currentLang === "pt"}
+            className={`${styles.option} ${currentLang === "pt" ? styles.optionActive : ""}`}
+            onClick={() => handleSelect("pt")}
+          >
+            <img src={brFlag} alt="" className={styles.flag} />
+            {t("common.portuguese")}
           </button>
         </div>
       )}

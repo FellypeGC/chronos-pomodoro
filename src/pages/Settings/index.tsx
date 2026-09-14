@@ -91,8 +91,8 @@ const Settings = () => {
               onChange={(e) => i18n.changeLanguage(e.target.value)}
               aria-label={t("menu.languageLabel")}
             >
-              <option value="pt">{t("common.portuguese")}</option>
               <option value="en">{t("common.english")}</option>
+              <option value="pt">{t("common.portuguese")}</option>
             </select>
             <span className={styles.flagPreview}>
               <img
