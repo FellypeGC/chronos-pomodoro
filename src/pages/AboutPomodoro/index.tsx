@@ -20,7 +20,7 @@ function AboutPomodoro() {
 
           <p dangerouslySetInnerHTML={{ __html: t("about.p1") }} />
 
-          <img src="https://placehold.co/1920x1080" alt="" />
+          {/* <img src="https://placehold.co/1920x1080" alt="" /> */}
 
           <h2>{t("about.howItWorks")}</h2>
           <ul>
