@@ -5,11 +5,11 @@ import brFlag from "../../assets/flags/br.svg";
 import usFlag from "../../assets/flags/us.svg";
 import menuStyles from "../Menu/styles.module.css";
 
-type LanguageToggleProps = {
+type LanguageSwitcherProps = {
   icon: React.ReactNode;
 };
 
-const LanguageToggle = ({ icon }: LanguageToggleProps) => {
+const LanguageSwitcher = ({ icon }: LanguageSwitcherProps) => {
   const { i18n, t } = useTranslation();
   const [open, setOpen] = useState(false);
   const wrapperRef = useRef<HTMLDivElement>(null);
@@ -77,4 +77,4 @@ const LanguageToggle = ({ icon }: LanguageToggleProps) => {
   );
 };
 
-export default LanguageToggle;
+export default LanguageSwitcher;

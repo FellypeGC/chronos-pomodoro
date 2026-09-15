@@ -9,7 +9,7 @@ import {
 import styles from "./styles.module.css";
 import { useState, useEffect } from "react";
 import RouterLink from "../RouterLink";
-import LanguageToggle from "../LanguageToggle";
+import LanguageSwitcher from "../LanguageSwitcher";
 import { useTranslation } from "react-i18next";
 
 type AvailableThemes = "dark" | "light";
@@ -79,7 +79,7 @@ const Menu = () => {
       >
         {nextThemeIcon[theme]}
       </a>
-      <LanguageToggle icon={<Languages />} />
+      <LanguageSwitcher icon={<Languages />} />
     </nav>
   );
 };
