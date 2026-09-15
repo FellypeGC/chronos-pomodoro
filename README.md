@@ -170,11 +170,11 @@ Built as a learning project (LOM course) and extended with i18n, configurable cy
 
 | Início | Histórico | Configurações | Sobre |
 |---|---|---|---|
-| ![Início](screenshots/chronos-pomodoro-home.png) | ![Histórico](screenshots/chronos-pomodoro-history.png) | ![Configurações](screenshots/chronos-pomodoro-settings.png) | ![Sobre](screenshots/chronos-pomodoro-about.png) |
+| ![Início](screenshots/chronos-pomodoro-home-pt.png) | ![Histórico](screenshots/chronos-pomodoro-history-pt.png) | ![Configurações](screenshots/chronos-pomodoro-settings-pt.png) | ![Sobre](screenshots/chronos-pomodoro-about-pt.png) |
 
 | Histórico (vazio) | Início (ativo) | Menu Idioma | Tema Claro |
 |---|---|---|---|
-| ![Histórico Vazio](screenshots/chronos-pomodoro-history-empty.png) | ![Início Ativo](screenshots/chronos-pomodoro-home-active.png) | ![Idioma](screenshots/chronos-pomodoro-menu-switcher.png) | ![Claro](screenshots/chronos-pomodoro-theme-light.png) |
+| ![Histórico Vazio](screenshots/chronos-pomodoro-history-empty-pt.png) | ![Início Ativo](screenshots/chronos-pomodoro-home-active-pt.png) | ![Idioma](screenshots/chronos-pomodoro-menu-switcher-pt.png) | ![Claro](screenshots/chronos-pomodoro-theme-light-pt.png) |
 
 > Todos os screenshots são gerados a partir do app em execução (`npm run dev`). Veja `screenshots/` para os arquivos originais.
 
